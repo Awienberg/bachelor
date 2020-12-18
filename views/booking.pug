@@ -1,0 +1,67 @@
+extends layout
+
+block content
+    h1= title
+    h2= subtitle
+    main
+        div.wrapper
+        form(id='book' action='/register' method='POST')
+                tr
+                    h2 1. Vælg størrelse på hunden og derefter den ønskede service
+                        br
+                        br
+                        each str in strs
+                            label #{str.str}
+                            input(type='checkbox' name='str' value= str.str)
+                            br
+                        br
+                        each service in services
+                            label #{service.service} | #{service.beskrivelse} | #{service.varighed} | #{service.pris}
+                            input(type='checkbox' name='service' value= service.service)
+                            br
+                br
+                tr
+                    h2 2. Vælg dato og tid
+                        br
+                        h3 Ledige datoer:
+                        label 15-12-20
+                        input(type='checkbox' name='dato' value="15-12-20")
+                        label 16-12-20
+                        input(type='checkbox' name='dato' value="16-12-20")
+                        label 21-12-20
+                        input(type='checkbox' name='dato' value="17-12-20")
+                        br
+                        h3 Ledige tider:
+                        label 10:00
+                        input(type='checkbox' name='tid' value="10:00")
+                        label 13:00
+                        input(type='checkbox' name='tid' value="13:00")
+                        label 14:30
+                        input(type='checkbox' name='tid' value="14:30")
+                        
+                br
+                br
+                tr
+                    h2 3. Indtast dine oplysniger
+                        br
+                        br
+                        input(type='text' name='navn' placeholder='Navn' value="navn" required)
+                        br
+                        br
+                        input(type='text' name='email' placeholder='Email' value="email" required)
+                        br
+                        br
+                        input(type='text' name='telefon' placeholder='Telefon' value="telefon" required)
+                        br
+                        br
+                        input(type='text' name='hundenavn' placeholder='Hundenavn' value="hundenavn" required)
+                        br
+                        br
+                        input(type='text' name='hunderace' placeholder='Hunderace' value="hunderace" required)
+                br
+                br
+                tr
+                    h2 4. Bekræft aftalen
+                        br
+                        br
+                        input(type='submit' value='Bekræft aftale')

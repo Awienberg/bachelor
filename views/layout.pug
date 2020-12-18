@@ -1,7 +1,18 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(type='module' src='/javascripts/page.js')
+    body
+        header
+            nav
+                ul
+                    li
+                        a(href="/") Forside
+                    li
+                        a(href="/booking") Online booking
+                    li
+                        a(href="/bookings") Bookings
+        main
+            block content

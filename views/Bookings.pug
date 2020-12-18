@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    h1= title
+    main
+        table
+            tr
+                th Navn
+                th Email
+                th Telefon
+                th Hundens navn
+                th Race
+                th Service
+                th Dato
+                th Tid
+                each booking in bookings
+                    tr
+                        td #{booking.navn}
+                        td #{booking.email}
+                        td #{booking.telefon}
+                        td #{booking.hundenavn}
+                        td #{booking.hunderace}
+                        td #{booking.service}
+                        td #{booking.dato}
+                        td #{booking.tid}
